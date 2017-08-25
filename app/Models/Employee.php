@@ -10,9 +10,6 @@ class Employee extends Model implements Transformable
 {
     use TransformableTrait;
 
-    protected $fillable = [
-        'document_number',
-        'office'
-    ];
+    protected $fillable = [];
 
 }
