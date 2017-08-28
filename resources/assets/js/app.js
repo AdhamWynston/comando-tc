@@ -6,7 +6,6 @@
  */
 
 require('./bootstrap');
-
 window.Vue = require('vue');
 
 /**
@@ -16,24 +15,8 @@ window.Vue = require('vue');
  */
 
 Vue.component('example', require('./components/Example.vue'));
+Vue.component('vc-clients', require('./components/clients.vue'));
 
-const app = new Vue({
-    el: '#app'
-});
 new Vue({
-    el: '#app',
-    created: function () {
-        this.getClients();
-    },
-    data:{
-        clients: []
-    },
-    methods:{
-        getClients: function () {
-            var urlClients = 'admin.clients';
-            axios.get(urlClients).then(response => {
-                this.clients = response.data
-            });
-        }
-    }
+    el: '#crud'
 });

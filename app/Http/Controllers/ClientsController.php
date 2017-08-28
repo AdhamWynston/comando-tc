@@ -16,10 +16,12 @@ class ClientsController extends Controller
 
     public function index()
     {
-        $clients = $this->repository->paginate(5);
-        return view('clients.index',compact('clients'));
-    }
 
+        return view('admin.clients.index');
+    }
+    public function getClients(){
+        return \Response::json(Client::all(), 200);
+    }
 
     public function create()
     {
@@ -33,7 +35,7 @@ class ClientsController extends Controller
     }
 
 
-    public function show($id)
+    public function show(Client $client)
     {
         //
     }
@@ -41,7 +43,9 @@ class ClientsController extends Controller
 
     public function edit($id)
     {
-        //
+        $client = Client::findOrFail($id);
+
+        return $client;
     }
 
     public function update(Request $request, $id)
@@ -49,9 +53,13 @@ class ClientsController extends Controller
         //
     }
 
-
     public function destroy($id)
     {
         //
+    }
+    public function desactive($id)
+    {
+        $teste = array('status' => 1);
+        $this->repository->update($teste, $id);
     }
 }
