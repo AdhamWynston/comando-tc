@@ -30,10 +30,12 @@
 <!-- Page NAV END-->
 
 
-
 <div class="container">
+    <div id="app">
     @yield('content')
+    </div>
 </div>
+
 </body>
 <!-- START FOOTER -->
 

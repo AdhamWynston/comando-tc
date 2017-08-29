@@ -1,22 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    <!--breadcrumbs start-->
-    <div class="row">
-            <div id="breadcrumbs-wrapper" class=" grey lighten-3">
-                <div class="container">
-                    <div class="row">
-                        <div class="col s12 m12 l12">
-                            <ol class="breadcrumb">
-                                <li><a href="{{route('home')}}">Home</a></li>
-                                <li class="active">Clientes</li>
-                            </ol>
-                        </div>
-                    </div>
-                </div>
-            </div>
-    </div>
-    <!--breadcrumbs end-->
-    <div id="crud" class="section">
         <br>
         <div class="fixed-action-btn">
             <a class="btn-floating btn-large red pulse">
@@ -48,9 +31,9 @@
                     <!--CREATE BUTTON END-->
                     <!-- PAGE HEADER -->
                     <div class="container">
-                        <h3>Clientes</h3>
                     </div>
                     <!-- PAGE HEADER END-->
+
                 <vc-clients></vc-clients>
                 </div>
 

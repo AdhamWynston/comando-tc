@@ -896,7 +896,7 @@ Vue.component('example', __webpack_require__(37));
 Vue.component('vc-clients', __webpack_require__(40));
 
 new Vue({
-  el: '#crud'
+  el: '#app'
 });
 
 /***/ }),
@@ -42056,7 +42056,7 @@ exports = module.exports = __webpack_require__(43)(undefined);
 
 
 // module
-exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
+exports.push([module.i, "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n", ""]);
 
 // exports
 
@@ -42432,9 +42432,11 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    staticClass: "row"
+    staticClass: "row "
+  }, [_c('div', {
+    staticClass: "col s10"
   }, [_c('table', {
-    staticClass: "highlight",
+    staticClass: "highlight centered",
     attrs: {
       "border": "1"
     }
@@ -42457,7 +42459,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     }, [_c('i', {
       staticClass: "material-icons"
     }, [_vm._v("lock_open")])])])])
-  }))])])
+  }))])])])
 },staticRenderFns: [function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('thead', [_c('tr', [_c('th', [_c('a', {
     attrs: {

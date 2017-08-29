@@ -18,5 +18,5 @@ Vue.component('example', require('./components/Example.vue'));
 Vue.component('vc-clients', require('./components/clients.vue'));
 
 new Vue({
-    el: '#crud'
+    el: '#app'
 });

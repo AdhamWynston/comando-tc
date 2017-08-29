@@ -21,6 +21,7 @@
   "dependencies": {
     "material-components-web": "^0.18.1",
     "materialize-css": "^0.100.2",
-    "vue-material": "^0.7.4"
+    "vue-material": "^0.7.4",
+    "vuetify": "^0.15.0-beta.3"
   }
 }

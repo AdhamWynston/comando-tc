@@ -21,8 +21,9 @@
 </script>
 <template>
 
-    <div class="row">
-        <table class="highlight" border="1">
+    <div class="row ">
+        <div class="col s10">
+        <table class="highlight centered" border="1">
             <thead>
             <tr>
                 <th><a href="#"></a>ID</th>
@@ -44,6 +45,7 @@
             </tr>
             </tbody>
         </table>
+        </div>
     </div>
 
 </template>
