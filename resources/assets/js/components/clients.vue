@@ -1,41 +1,62 @@
 <script>
+    import VcPagination from './pagination.vue'
     export default {
-        props: ['clients'],
+
+        components:{
+            VcPagination
+        },
+
+        data: {
+            clients: []
+        },
         data(){
             return {
+                pagination: {}
             }
         },
+        computed: {
+            client: function () {
+              return this.clients
+          }
+        },
         methods:{
+            navigate (page){
+                var urlClients = 'clients/api/list?page='+page;
+                axios.get(urlClients).then(response => {
+                    this.clients = response.data.data;
+                    this.pagination = response.data;
+                })
+            },
             desactiveClient: function (){
-
                 toastr.success('Desativado com sucesso!')
             }
         },
          mounted (){
              var urlClients = 'clients/api/list';
              axios.get(urlClients).then(response => {
-                 this.clients = response.data
-             });
+                 this.clients = response.data.data;
+                 this.pagination = response.data;
+             })
         },
     }
 </script>
 <template>
 
     <div class="row ">
-        <div class="col s10">
-        <table class="highlight centered" border="1">
+        <div class="">
+        <table class="highlight bordered " border="1">
             <thead>
             <tr>
-                <th><a href="#"></a>ID</th>
-                <th><a href="#"></a>Nome</th>
-                <th>Ação</th>
+                <th width="100px"><a href="#"></a>ID</th>
+                <th class="center-align"><a href="#"></a>Nome</th>
+                <th width="">Ação</th>
             </tr>
             </thead>
 
             <tbody>
             <tr v-for="c in clients">
                 <td>{{ c.id }}</td>
-                <td>{{ c.name }}</td>
+                <td class="center-align">{{ c.name }}</td>
                 <td>
                     <a href="" class="tooltipped waves-effect waves-circle waves-light btn-floating blue" data-tooltip="Visualizar cliente" data-position="top" data-delay="50"><i class="material-icons">remove_red_eye</i></a>
                     <a href="" class="tooltipped waves-effect waves-circle waves-light btn-floating orange" data-tooltip="Editar cliente" data-position="top" data-delay="50"><i class="material-icons">edit</i></a>
@@ -45,6 +66,9 @@
             </tr>
             </tbody>
         </table>
+            <div class="centered">
+                <vc-pagination :source="pagination" @navigate="navigate" ></vc-pagination>
+            </div>
         </div>
     </div>
 

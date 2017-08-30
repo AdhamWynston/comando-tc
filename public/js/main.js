@@ -1,5 +1,4 @@
 $(document).ready(function(){
-    $(".button-collapse").sideNav();
     $('.parallax').parallax();
     $('.modal').modal();
     Materialize.updateTextFields();
@@ -65,4 +64,7 @@ $(document).ready(function(){
         }
     });
     $('select').material_select();
+});
+$( document ).ready(function(){
+    $(".button-collapse").sideNav();
 });

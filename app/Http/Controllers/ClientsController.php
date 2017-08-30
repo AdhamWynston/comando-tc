@@ -20,7 +20,7 @@ class ClientsController extends Controller
         return view('admin.clients.index');
     }
     public function getClients(){
-        return \Response::json(Client::all(), 200);
+        return Client::paginate(5);
     }
 
     public function create()
